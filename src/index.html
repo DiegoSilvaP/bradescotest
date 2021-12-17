@@ -50,7 +50,9 @@
         console.log("Inicia sesion");
       } else {
         var para = document.createElement("P");
-        para.innerText = "asdasd";
+        para.innerText = document
+          .getElementById("loginframe")
+          .contentDocument.getElementById("txtToken").value;
         document.getElementById("data").appendChild(para);
       }
     }
