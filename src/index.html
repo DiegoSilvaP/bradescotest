@@ -3,36 +3,40 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="styles.css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+      crossorigin="anonymous"
+    ></script>
     <title>Vanilla JavaScript App</title>
   </head>
 
   <body>
-    <main>
-      <h1>Login through B2C custom policy (iframe)</h1>
-      <iframe
-        id="loginframe"
-        frameborder="0"
-        width="650"
-        height="560"
-        src="https://login.bradescob2ctest.tk/BradescoTest1.onmicrosoft.com/oauth2/v2.0/authorize?p=B2C_1A_SIGNUP_SIGNIN&client_id=3df67037-6caa-4807-b870-d8d759789964&nonce=defaultNonce&redirect_uri=https%3A%2F%2Fwww.bradescob2ctest.tk%2Fredirect&scope=openid&response_type=id_token&prompt=login"
-      ></iframe>
-      <button
-        type="button"
-        onclick="getToken()"
-        style="
-          margin: 16px;
-          padding: 16px;
-          background-color: darkblue;
-          color: aliceblue;
-          border: none;
-          border-radius: 4px;
-          font-size: 12px;
-        "
-      >
-        Get token from iframe
-      </button>
-    </main>
+    <div class="container">
+      <div class="row">
+        <div class="col"></div>
+        <div class="col" id="data">
+          <h1>Login through B2C custom policy (iframe)</h1>
+          <iframe
+            id="loginframe"
+            frameborder="0"
+            width="650"
+            height="560"
+            src="https://login.bradescob2ctest.tk/BradescoTest1.onmicrosoft.com/oauth2/v2.0/authorize?p=B2C_1A_SIGNUP_SIGNIN&client_id=3df67037-6caa-4807-b870-d8d759789964&nonce=defaultNonce&redirect_uri=https%3A%2F%2Fwww.bradescob2ctest.tk%2Fredirect&scope=openid&response_type=id_token&prompt=login"
+          ></iframe>
+          <button type="button" onclick="getToken()" class="btn btn-primary">
+            Get token from iframe
+          </button>
+        </div>
+        <div class="col"></div>
+      </div>
+    </div>
   </body>
 
   <script>
@@ -46,10 +50,8 @@
         console.log("Inicia sesion");
       } else {
         var para = document.createElement("P");
-        para.innerText = document
-          .getElementById("loginframe")
-          .contentDocument.getElementById("txtToken").value;
-        document.body.appendChild(para);
+        para.innerText = "asdasd";
+        document.getElementById("data").appendChild(para);
       }
     }
   </script>
